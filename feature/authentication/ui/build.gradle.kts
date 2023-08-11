@@ -1,11 +1,30 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
+}
+
+kapt {
+    correctErrorTypes = true
 }
 
 android {
     namespace = "com.feature.authentication.ui"
     compileSdk = 33
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    kotlin {
+        jvmToolchain(8)
+    }
 
     buildFeatures {
         viewBinding = true
@@ -38,11 +57,14 @@ android {
 dependencies {
 
     implementation(project(":core:common"))
+    implementation(project(":feature:authentication:domain"))
 
     implementation(Deps.core)
     implementation(Deps.appCompat)
     implementation(Deps.androidMaterial)
     implementation(Deps.constraintLayout)
+
+    implementation(FireBase.firebaseAuth)
 
 
     // Coroutines
@@ -62,7 +84,8 @@ dependencies {
     // Hilt
     implementation(DaggerHilt.hilt)
     implementation(DaggerHilt.hiltNavigation)
-//    kapt(DaggerHilt.hiltAndroidCompiler)
+    kapt(DaggerHilt.hiltAndroidCompiler)
+//    kapt(DaggerHilt.hiltCompiler)
 
     testImplementation(TestImplementation.jUnit)
     androidTestImplementation(AndroidTestImplementation.testExtJUnit)

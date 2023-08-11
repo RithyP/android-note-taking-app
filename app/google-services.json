@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "886801549155",
+    "firebase_url": "https://a-note-taking-app-5ec39-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "a-note-taking-app-5ec39",
+    "storage_bucket": "a-note-taking-app-5ec39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886801549155:android:8430bcdc7e61cc3b8cf556",
+        "android_client_info": {
+          "package_name": "com.rithyphavan.notetakingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886801549155-rkkqsd17jhtib7b51fviad2a1qiaqtul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rithyphavan.notetakingapp",
+            "certificate_hash": "2d48ad1aa0dd9729ef0d1a099a430f6ffe924624"
+          }
+        },
+        {
+          "client_id": "886801549155-2e2ovheem7l39gks5e1k0tl0ttgoh6at.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3-_96hdji-QH-v2x0j8HlV8BTIdNN4rc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886801549155-2e2ovheem7l39gks5e1k0tl0ttgoh6at.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

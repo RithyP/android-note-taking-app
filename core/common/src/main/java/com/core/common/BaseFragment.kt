@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
@@ -14,19 +15,6 @@ abstract class BaseFragment<VB : ViewBinding>(
 ) : Fragment() {
     private var _binding: VB? = null
     val binding get() = _binding!!
-
-
-    /* override fun onCreate(savedInstanceState: Bundle?) {
-         super.onCreate(savedInstanceState)
-         _binding = viewBindingInflater(layoutInflater)
-         binding = _binding
-         setContentView(binding.root)
-         setStatusBarTransparent()
-
-         initView()
-         initObserver()
-         initAction()
-     }*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -56,4 +44,27 @@ abstract class BaseFragment<VB : ViewBinding>(
      * Use this function only for state observing like listening to LiveData or Coroutine Flow.
      */
     open fun initObserver() {}
+
+    /**
+     * Use when the data has already been decrypted only
+     */
+    protected open fun <T> handleOnRes(
+        respond: UiEvent<T>,
+        showLoading: Boolean = true,
+        onSuccess: (T) -> Unit = {},
+    ) {
+        when (respond) {
+            is UiEvent.Loading -> {
+//                if (showLoading) showLoading()
+            }
+
+            is UiEvent.Success -> {
+                onSuccess(respond.data!!)
+            }
+
+            is UiEvent.Error -> {
+                Toast.makeText(requireContext(), "${respond.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 }

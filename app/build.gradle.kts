@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("androidx.navigation.safeargs")
+    id("com.google.gms.google-services")
     kotlin("kapt")
 }
 
@@ -61,6 +62,9 @@ android {
 dependencies {
 
     implementation(project(":feature:authentication:ui"))
+    implementation(project(":feature:authentication:domain"))
+    implementation(project(":feature:authentication:data"))
+    implementation(project(":core:common"))
 
     implementation(Deps.core)
     implementation(Deps.appCompat)
@@ -94,6 +98,7 @@ dependencies {
     implementation(DaggerHilt.hilt)
     implementation(DaggerHilt.hiltNavigation)
     kapt(DaggerHilt.hiltAndroidCompiler)
+//    kapt(DaggerHilt.hiltCompiler)
 
     testImplementation(TestImplementation.jUnit)
     testImplementation(TestImplementation.jUnitJupiter)

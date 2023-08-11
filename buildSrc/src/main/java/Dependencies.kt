@@ -13,6 +13,8 @@ object Version {
     const val okHttp = "5.0.0-alpha.9"
     const val okio = "3.1.0"
 
+    const val firebase = "22.1.1"
+
     const val hilt = "2.44"
     const val hiltNavigation = "1.0.0"
 
@@ -60,11 +62,22 @@ object CoroutinesLifecycleScope {
         "androidx.lifecycle:lifecycle-extensions:${Version.coroutineLifecycleExtension}"
 }
 
+
+object NavigationComponent {
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Version.navVersion}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Version.navVersion}"
+}
+
 object DaggerHilt {
     const val hilt = "com.google.dagger:hilt-android:${Version.hilt}"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Version.hilt}"
     const val hiltCompiler = "com.google.dagger.hilt-compiler:${Version.hilt}"
     const val hiltNavigation = "androidx.hilt:hilt-navigation-fragment:${Version.hiltNavigation}"
+}
+
+object FireBase {
+    const val firebaseAuth = "com.google.firebase:firebase-auth-ktx:${Version.firebase}"
 }
 
 object TestImplementation {
@@ -79,10 +92,4 @@ object AndroidTestImplementation {
     const val testExtJUnit = "androidx.test.ext:junit:${Version.testExtJUnit}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Version.espressoCore}"
     const val mockito = "org.mockito:mockito-android:${Version.mockitoCore}"
-}
-
-object NavigationComponent {
-    const val navigationFragment =
-        "androidx.navigation:navigation-fragment-ktx:${Version.navVersion}"
-    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Version.navVersion}"
 }
