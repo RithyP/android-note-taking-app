@@ -7,6 +7,10 @@ android {
     namespace = "com.core.common"
     compileSdk = 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         minSdk = 26
 

@@ -7,6 +7,10 @@ android {
     namespace = "com.feature.authentication.ui"
     compileSdk = 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         minSdk = 26
 
@@ -18,8 +22,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -34,10 +37,34 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(project(":core:common"))
+
+    implementation(Deps.core)
+    implementation(Deps.appCompat)
+    implementation(Deps.androidMaterial)
+    implementation(Deps.constraintLayout)
+
+
+    // Coroutines
+    implementation(Coroutines.coroutineCore)
+    implementation(Coroutines.coroutineAndroid)
+
+    // Navigation
+    implementation(NavigationComponent.navigationFragment)
+    implementation(NavigationComponent.navigationUi)
+
+    // Coroutine Lifecycle Scopes
+    implementation(CoroutinesLifecycleScope.lifecycleViewModel)
+    implementation(CoroutinesLifecycleScope.lifecycleRuntime)
+    // implementation("android.arch.lifecycle:extensions:1.1.1")
+    implementation(CoroutinesLifecycleScope.lifeCycleExtension)
+
+    // Hilt
+    implementation(DaggerHilt.hilt)
+    implementation(DaggerHilt.hiltNavigation)
+//    kapt(DaggerHilt.hiltAndroidCompiler)
+
+    testImplementation(TestImplementation.jUnit)
+    androidTestImplementation(AndroidTestImplementation.testExtJUnit)
+    androidTestImplementation(AndroidTestImplementation.espressoCore)
 }
