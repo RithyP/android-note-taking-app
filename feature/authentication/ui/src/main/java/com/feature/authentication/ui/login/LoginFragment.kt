@@ -5,7 +5,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
-import com.core.common.BaseFragment
+import com.core.common.base.BaseFragment
 import com.core.common.extension.collectLatestOnStart
 import com.core.common.extension.customNavigateFragment
 import com.feature.authentication.ui.databinding.FragmentLoginBinding
