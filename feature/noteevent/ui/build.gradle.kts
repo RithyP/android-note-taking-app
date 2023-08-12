@@ -57,7 +57,7 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
-    implementation(project(":feature:authentication:domain"))
+    implementation(project(":feature:noteevent:domain"))
 
     implementation(Deps.core)
     implementation(Deps.appCompat)

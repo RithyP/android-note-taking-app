@@ -5,10 +5,11 @@ import com.feature.authentication.domain.repository.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.tasks.await
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class AuthRepositoryImpl : AuthRepository {
+class AuthRepositoryImpl @Inject constructor() : AuthRepository {
     private val firebaseAuth = FirebaseAuth.getInstance()
     override suspend fun login(email: String, password: String): UiEvent<FirebaseUser> {
         return try {
