@@ -64,6 +64,10 @@ dependencies {
     implementation(project(":feature:authentication:ui"))
     implementation(project(":feature:authentication:domain"))
     implementation(project(":feature:authentication:data"))
+
+    implementation(project(":feature:noteevent:ui"))
+    implementation(project(":feature:noteevent:domain"))
+    implementation(project(":feature:noteevent:data"))
     implementation(project(":core:common"))
 
     implementation(Deps.core)

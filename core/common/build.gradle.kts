@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("androidx.navigation.safeargs")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -43,6 +44,10 @@ dependencies {
     // Coroutines
     implementation(Coroutines.coroutineCore)
     implementation(Coroutines.coroutineAndroid)
+
+    // Navigation
+    implementation(NavigationComponent.navigationFragment)
+    implementation(NavigationComponent.navigationUi)
 
     // Coroutine Lifecycle Scopes
     implementation(CoroutinesLifecycleScope.lifecycleViewModel)

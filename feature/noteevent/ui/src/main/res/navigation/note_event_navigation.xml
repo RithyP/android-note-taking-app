@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_event_navigation"
+    app:startDestination="@id/noteListingFragment">
+
+    <fragment
+        android:id="@+id/noteListingFragment"
+        android:name="com.feature.noteevent.ui.notelisting.NoteListingFragment"
+        android:label="NoteListingFragment"
+        tools:layout="@layout/fragment_note_listing">
+        <deepLink app:uri="myApp://noteListingFragment" />
+    </fragment>
+
+</navigation>

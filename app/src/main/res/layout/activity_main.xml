@@ -15,6 +15,6 @@
         android:fitsSystemWindows="true"
         app:defaultNavHost="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/login_navigation" />
+        app:navGraph="@navigation/app_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
