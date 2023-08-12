@@ -1,7 +1,7 @@
 object Version {
     const val core = "1.9.0"
     const val appCompat = "1.6.1"
-    const val androidMaterial = "1.9.0"
+    const val androidMaterial = "1.8.0"
     const val constraintLayout = "2.1.4"
 
     const val kotlinCoroutines = "1.6.4"
@@ -13,7 +13,10 @@ object Version {
     const val okHttp = "5.0.0-alpha.9"
     const val okio = "3.1.0"
 
+    const val firebase = "22.1.1"
+
     const val hilt = "2.44"
+    const val hiltNavigation = "1.0.0"
 
     const val jUnit = "4.13.2"
     const val jUnitJupiter = "5.8.2"
@@ -22,6 +25,8 @@ object Version {
 
     const val testExtJUnit = "1.1.5"
     const val espressoCore = "3.5.1"
+
+    const val navVersion = "2.5.3"
 }
 
 object Deps {
@@ -57,10 +62,22 @@ object CoroutinesLifecycleScope {
         "androidx.lifecycle:lifecycle-extensions:${Version.coroutineLifecycleExtension}"
 }
 
+
+object NavigationComponent {
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Version.navVersion}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Version.navVersion}"
+}
+
 object DaggerHilt {
     const val hilt = "com.google.dagger:hilt-android:${Version.hilt}"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Version.hilt}"
     const val hiltCompiler = "com.google.dagger.hilt-compiler:${Version.hilt}"
+    const val hiltNavigation = "androidx.hilt:hilt-navigation-fragment:${Version.hiltNavigation}"
+}
+
+object FireBase {
+    const val firebaseAuth = "com.google.firebase:firebase-auth-ktx:${Version.firebase}"
 }
 
 object TestImplementation {
