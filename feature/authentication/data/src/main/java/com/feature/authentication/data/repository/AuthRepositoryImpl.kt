@@ -4,16 +4,14 @@ import com.core.common.UiEvent
 import com.feature.authentication.domain.repository.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.tasks.await
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class AuthRepositoryImpl : AuthRepository {
+    private val firebaseAuth = FirebaseAuth.getInstance()
     override suspend fun login(email: String, password: String): UiEvent<FirebaseUser> {
         return try {
-            val firebaseAuth = FirebaseAuth.getInstance()
             val res = firebaseAuth.signInWithEmailAndPassword(
                 email, password
             ).await()
@@ -29,5 +27,14 @@ class AuthRepositoryImpl : AuthRepository {
             UiEvent.Error(e.message.toString())
         }
 
+    }
+
+    override suspend fun logout(): UiEvent<Nothing> {
+        return try {
+            firebaseAuth.signOut()
+            UiEvent.Success(null)
+        } catch (e: Exception) {
+            UiEvent.Error(e.message.toString(), null)
+        }
     }
 }

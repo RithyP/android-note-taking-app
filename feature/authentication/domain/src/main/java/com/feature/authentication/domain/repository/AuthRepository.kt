@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface AuthRepository {
     suspend fun login(email: String, password: String): UiEvent<FirebaseUser>
+
+    suspend fun logout(): UiEvent<Nothing>
 }
