@@ -1,8 +1,13 @@
 package com.feature.noteevent.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
+@Parcelize
 data class NoteEvent(
-    val date: String,
-    val description: String,
-    val invitee: List<String>,
-    val title: String,
-)
+    var date: String,
+    var description: String,
+    var invitee: List<String>?,
+    var title: String,
+) : Parcelable

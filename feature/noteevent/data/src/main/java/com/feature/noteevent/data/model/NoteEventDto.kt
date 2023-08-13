@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class NoteEventDto(
     @SerializedName("date") val date: String,
     @SerializedName("description") val description: String,
-    @SerializedName("invitee") val invitee: List<String>,
+    @SerializedName("invitee") val invitee: List<String>?,
     @SerializedName("title") val title: String
 ) {
     companion object {

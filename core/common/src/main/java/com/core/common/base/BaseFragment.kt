@@ -8,12 +8,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.core.common.UiEvent
+import com.core.common.dialog.LoadingDialog
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
 abstract class BaseFragment<VB : ViewBinding>(
     private val inflate: Inflate<VB>
 ) : Fragment() {
+    private var loadingDialog: LoadingDialog? = null
+
     private var _binding: VB? = null
     val binding get() = _binding!!
 
@@ -56,16 +59,38 @@ abstract class BaseFragment<VB : ViewBinding>(
     ) {
         when (respond) {
             is UiEvent.Loading -> {
-//                if (showLoading) showLoading()
+                if (showLoading) showLoading()
             }
 
             is UiEvent.Success -> {
                 onSuccess(respond.data!!)
+                hideLoading()
             }
 
             is UiEvent.Error -> {
                 Toast.makeText(requireContext(), "${respond.message}", Toast.LENGTH_SHORT).show()
+                hideLoading()
             }
         }
+    }
+
+    open fun hideLoading() {
+        loadingDialog?.dismiss()
+    }
+
+    val isLoading: Boolean
+        get() {
+            return loadingDialog?.isVisible ?: false
+        }
+
+    open fun showLoading() {
+        loadingDialog?.dismissAllowingStateLoss()
+        if (loadingDialog == null) {
+            loadingDialog = LoadingDialog()
+        }
+//        if (loadingDialog?.isAdded == true) {
+//            loadingDialog?.dismiss()
+//        }
+        loadingDialog?.show(childFragmentManager, "")
     }
 }

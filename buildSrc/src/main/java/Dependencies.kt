@@ -32,6 +32,7 @@ object Version {
 object Deps {
     const val core = "androidx.core:core-ktx:${Version.core}"
     const val appCompat = "androidx.appcompat:appcompat:${Version.appCompat}"
+    const val activityKtx = "androidx.activity:activity-ktx:1.7.2"
     const val androidMaterial = "com.google.android.material:material:${Version.androidMaterial}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"

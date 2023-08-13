@@ -2,6 +2,7 @@ package com.core.common.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.viewbinding.ViewBinding
