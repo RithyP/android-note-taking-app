@@ -1,11 +1,13 @@
 package com.rithyphavan.notetakingapp
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.core.common.base.BaseActivity
+import com.rithyphavan.notetakingapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+
+    override fun initView() {
+        super.initView()
     }
 }

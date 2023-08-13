@@ -15,4 +15,12 @@ dependencyResolutionManagement {
 
 rootProject.name = "Note Taking App"
 include(":app")
- 
+include(":feature:authentication:data")
+include(":feature:authentication:domain")
+include(":feature:authentication:ui")
+include(":core:network")
+include(":core:common")
+include(":core:feature_api")
+include(":feature:noteevent:data")
+include(":feature:noteevent:domain")
+include(":feature:noteevent:ui")
